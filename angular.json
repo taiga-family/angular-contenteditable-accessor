@@ -10,15 +10,10 @@
             "prefix": "lib",
             "architect": {
                 "build": {
-                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
                     "options": {
                         "tsConfig": "projects/angular-contenteditable-accessor/tsconfig.lib.json",
                         "project": "projects/angular-contenteditable-accessor/ng-package.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "optimization": true
-                        }
                     }
                 },
                 "test": {

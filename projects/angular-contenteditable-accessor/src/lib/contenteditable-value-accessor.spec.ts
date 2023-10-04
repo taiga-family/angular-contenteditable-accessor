@@ -230,10 +230,7 @@ describe('ContenteditableValueAccessor', () => {
 
         fixture.whenStable().then(() => {
             modelEl().focus();
-            document
-                .getSelection()!
-                .getRangeAt(0)
-                .selectNode(modelEl().firstChild!);
+            document.getSelection()!.getRangeAt(0).selectNode(modelEl().firstChild!);
             document.execCommand('delete');
 
             expect(modelEl().innerHTML).toBe('<br>');

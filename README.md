@@ -1,4 +1,5 @@
 # Tinkoff ControlValueAccessor for contenteditable elements
+
 [![Build](https://travis-ci.org/TinkoffCreditSystems/angular-contenteditable-accessor.svg?branch=master)](https://travis-ci.org/TinkoffCreditSystems/angular-contenteditable-accessor)
 [![Coverage Status](https://coveralls.io/repos/github/TinkoffCreditSystems/angular-contenteditable-accessor/badge.svg?branch=master)](https://coveralls.io/github/TinkoffCreditSystems/angular-contenteditable-accessor?branch=master)
 [![npm version](https://img.shields.io/npm/v/@tinkoff/angular-contenteditable-accessor.svg)](https://www.npmjs.com/package/@tinkoff/angular-contenteditable-accessor)

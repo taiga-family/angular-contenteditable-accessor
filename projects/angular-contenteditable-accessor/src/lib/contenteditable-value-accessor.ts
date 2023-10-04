@@ -29,7 +29,8 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
     ],
 })
 export class ContenteditableValueAccessor
-    implements ControlValueAccessor, AfterViewInit, OnDestroy {
+    implements ControlValueAccessor, AfterViewInit, OnDestroy
+{
     /*
      * MutationObserver IE11 fallback (as opposed to input event for modern browsers).
      * When mutation removes a tag, i.e. delete is pressed on the last remaining character
@@ -151,7 +152,7 @@ export class ContenteditableValueAccessor
      * also single <br> is replaced with empty string when passed to the control
      */
     private static processValue(value: unknown): string {
-        const processed = String(value == null ? '' : value);
+        const processed = String(value === null || value === undefined ? '' : value);
 
         return processed.trim() === '<br>' ? '' : processed;
     }
