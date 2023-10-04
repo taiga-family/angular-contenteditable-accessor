@@ -1,4 +1,4 @@
-name: ⚙️ Build
+name: ⚙️ CI
 
 on:
     pull_request:
@@ -6,8 +6,7 @@ on:
         branches: [main]
 
 jobs:
-    build:
-        name: libs
+    ci:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4.1.0
@@ -20,5 +19,5 @@ jobs:
                   NODE_OPTIONS: --openssl-legacy-provider
 
 concurrency:
-    group: build-${{ github.workflow }}-${{ github.ref }}
+    group: ci-${{ github.workflow }}-${{ github.ref }}
     cancel-in-progress: true
