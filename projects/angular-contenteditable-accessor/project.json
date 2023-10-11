@@ -1,0 +1,40 @@
+{
+    "name": "angular-contenteditable-accessor",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "projects/angular-contenteditable-accessor",
+    "projectType": "library",
+    "targets": {
+        "build": {
+            "executor": "@angular-devkit/build-angular:ng-packagr",
+            "options": {
+                "tsConfig": "projects/angular-contenteditable-accessor/tsconfig.lib.json",
+                "project": "projects/angular-contenteditable-accessor/ng-package.json"
+            }
+        },
+        "test": {
+            "executor": "@angular-devkit/build-angular:karma",
+            "options": {
+                "main": "projects/angular-contenteditable-accessor/src/test.ts",
+                "tsConfig": "projects/angular-contenteditable-accessor/tsconfig.spec.json",
+                "karmaConfig": "projects/angular-contenteditable-accessor/karma.conf.js",
+                "watch": false
+            }
+        },
+        "lint": {
+            "executor": "@angular-devkit/build-angular:tslint",
+            "options": {
+                "tsConfig": [
+                    "projects/angular-contenteditable-accessor/tsconfig.lib.json",
+                    "projects/angular-contenteditable-accessor/tsconfig.spec.json"
+                ],
+                "exclude": ["**/node_modules/**"]
+            }
+        },
+        "publish": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "npm publish ./dist/angular-contenteditable-accessor --access=public --ignore-scripts || echo \"already published\""
+            }
+        }
+    }
+}

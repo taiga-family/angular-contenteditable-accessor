@@ -18,19 +18,11 @@
     "homepage": "https://github.com/TinkoffCreditSystems/angular-contenteditable-accessor#README",
     "scripts": {
         "postinstall": "npx ngcc --async",
-        "ng": "ng",
-        "start": "ng serve",
-        "build": "ng build && npm run postbuild",
-        "lint": "ng lint",
-        "test": "ng test --browsers ChromeHeadless --watch=false --code-coverage",
-        "test:ci": "npm run check && npm run coveralls",
-        "coveralls": "cat coverage/angular-contenteditable-accessor/lcov.info | coveralls",
-        "release": "standard-version && npm run build",
-        "prettier": "prettier '**/*.{svg,yml,js,ts,html,md,less,json}'",
-        "package": "node scripts/updatePackage.js && git add projects/angular-contenteditable-accessor/package.json",
-        "postbuild": "node scripts/copyReadme.js && node scripts/removeDependencies.js",
-        "check": "npm run lint && tsc --noEmit --skipLibCheck && npm run test && lint-staged",
-        "precommit": "npm run check && npm run package"
+        "start": "nx serve",
+        "check": "tsc --noEmit --skipLibCheck",
+        "build": "nx build demo",
+        "test": "nx test angular-contenteditable-accessor --browsers ChromeHeadless --watch=false --code-coverage",
+        "prettier": "prettier '**/*.{svg,yml,js,ts,html,md,less,json}'"
     },
     "husky": {
         "hooks": {
@@ -70,7 +62,12 @@
         "karma-jasmine": "5.1.0",
         "karma-jasmine-html-reporter": "2.1.0",
         "lint-staged": "8.2.1",
-        "standard-version": "5.0.2",
+        "@nx/jest": "16.10.0",
+        "@nx/node": "16.10.0",
+        "@nx/workspace": "16.10.0",
+        "nx": "16.10.0",
+        "nx-cloud": "16.4.0",
+        "lerna": "7.3.0",
         "tsickle": "0.46.3",
         "typescript": "4.3.5"
     }
