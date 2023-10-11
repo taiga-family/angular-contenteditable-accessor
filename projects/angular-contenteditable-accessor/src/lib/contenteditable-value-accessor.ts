@@ -7,8 +7,10 @@ import {
     Inject,
     OnDestroy,
     Renderer2,
+    SecurityContext,
 } from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {DomSanitizer} from '@angular/platform-browser';
 
 /*
  * This is a barebones contenteditable {@link ControlValueAccessor} allowing you to use
@@ -39,11 +41,7 @@ export class ContenteditableValueAccessor
      */
     private observer = new MutationObserver(() => {
         setTimeout(() => {
-            this.onChange(
-                ContenteditableValueAccessor.processValue(
-                    this.elementRef.nativeElement.innerHTML,
-                ),
-            );
+            this.onChange(this.processValue(this.elementRef.nativeElement.innerHTML));
         });
     });
 
@@ -60,6 +58,7 @@ export class ContenteditableValueAccessor
     constructor(
         @Inject(ElementRef) private readonly elementRef: ElementRef,
         @Inject(Renderer2) private readonly renderer: Renderer2,
+        @Inject(DomSanitizer) private readonly sanitizer: DomSanitizer,
     ) {}
 
     /*
@@ -88,11 +87,7 @@ export class ContenteditableValueAccessor
     @HostListener('input')
     onInput() {
         this.observer.disconnect();
-        this.onChange(
-            ContenteditableValueAccessor.processValue(
-                this.elementRef.nativeElement.innerHTML,
-            ),
-        );
+        this.onChange(this.processValue(this.elementRef.nativeElement.innerHTML));
     }
 
     /*
@@ -112,7 +107,7 @@ export class ContenteditableValueAccessor
         this.renderer.setProperty(
             this.elementRef.nativeElement,
             'innerHTML',
-            ContenteditableValueAccessor.processValue(value),
+            this.processValue(value),
         );
     }
 
@@ -151,9 +146,14 @@ export class ContenteditableValueAccessor
      * null is treated as empty string to prevent IE11 outputting 'null',
      * also single <br> is replaced with empty string when passed to the control
      */
-    private static processValue(value: unknown): string {
+    private processValue(value: unknown): string {
         const processed = String(value === null || value === undefined ? '' : value);
 
-        return processed.trim() === '<br>' ? '' : processed;
+        return (
+            this.sanitizer.sanitize(
+                SecurityContext.HTML,
+                processed.trim() === '<br>' ? '' : processed,
+            ) ?? ''
+        );
     }
 }
