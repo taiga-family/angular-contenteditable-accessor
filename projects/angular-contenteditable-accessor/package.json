@@ -17,7 +17,7 @@
     ],
     "license": "Apache-2.0",
     "author": "Alex Inkin <a.inkin@tinkoff.ru>",
-    "repository": "https://github.com/TinkoffCreditSystems/angular-contenteditable-accessor",
-    "bugs": "https://github.com/TinkoffCreditSystems/angular-contenteditable-accessor/issues",
-    "homepage": "https://github.com/TinkoffCreditSystems/angular-contenteditable-accessor#README"
+    "repository": "https://github.com/taiga-family/angular-contenteditable-accessor",
+    "bugs": "https://github.com/taiga-family/angular-contenteditable-accessor/issues",
+    "homepage": "https://github.com/taiga-family/angular-contenteditable-accessor#README"
 }

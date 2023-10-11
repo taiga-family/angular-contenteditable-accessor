@@ -1,4 +1,4 @@
-name: ⚠️ Release @tinkoff/tui-editor
+name: ⚠️ Release
 on:
     workflow_dispatch:
         inputs:
