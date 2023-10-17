@@ -3,7 +3,7 @@
 [![⚙️ CI](https://github.com/taiga-family/angular-contenteditable-accessor/actions/workflows/ci.yml/badge.svg)](https://github.com/taiga-family/angular-contenteditable-accessor/actions/workflows/ci.yml)
 [![npm version](https://img.shields.io/npm/v/@tinkoff/angular-contenteditable-accessor.svg)](https://www.npmjs.com/package/@tinkoff/angular-contenteditable-accessor)
 
-> This accessor allows you to use Angular forms with contenteditable elements with ease. It has zero dependencies, other than Angular itself as peer and works with Angular 4+ in all modern browsers, including _Internet Explorer 11_.
+> This accessor allows you to use Angular forms with contenteditable elements with ease.
 
 ## Install
 
