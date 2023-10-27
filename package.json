@@ -62,7 +62,7 @@
         "karma-jasmine": "5.1.0",
         "karma-jasmine-html-reporter": "2.1.0",
         "lint-staged": "15.0.2",
-        "@nx/jest": "16.10.0",
+        "@nx/jest": "17.0.2",
         "@nx/node": "16.10.0",
         "@nx/workspace": "16.10.0",
         "nx": "16.10.0",
