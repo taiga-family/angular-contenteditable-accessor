@@ -1,12 +1,7 @@
 {
-    "npmScope": "angular-contenteditable-accessor",
     "tasksRunnerOptions": {
         "default": {
-            "runner": "nx-cloud",
-            "options": {
-                "parallel": 1,
-                "cacheableOperations": ["build", "test", "lint"]
-            }
+            "options": {}
         }
     },
     "affected": {
@@ -24,14 +19,20 @@
             "{workspaceRoot}/nx.json",
             "{workspaceRoot}/tsconfig.*.json",
             "{workspaceRoot}/tsconfig.json"
-        ]
+        ],
+        "production": ["default"]
     },
     "targetDefaults": {
         "build": {
-            "inputs": ["default"]
+            "inputs": ["default"],
+            "cache": true
         },
         "test": {
-            "inputs": ["default"]
+            "inputs": ["default"],
+            "cache": true
+        },
+        "lint": {
+            "cache": true
         }
     }
 }

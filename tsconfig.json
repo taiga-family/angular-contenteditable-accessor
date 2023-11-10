@@ -19,9 +19,7 @@
         "typeRoots": ["node_modules/@types"],
         "lib": ["es2018", "dom"],
         "paths": {
-            "@tinkoff/angular-contenteditable-accessor": [
-                "projects/angular-contenteditable-accessor/src/public_api"
-            ]
+            "@tinkoff/angular-contenteditable-accessor": ["projects/angular-contenteditable-accessor/src/public_api"]
         }
     }
 }
