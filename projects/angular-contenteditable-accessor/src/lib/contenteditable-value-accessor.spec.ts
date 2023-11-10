@@ -6,10 +6,23 @@ import {ContenteditableValueAccessorModule} from './module';
 describe('ContenteditableValueAccessor', () => {
     @Component({
         template: `
-            <div #modelEl contenteditable [(ngModel)]="model" [disabled]="disabled"></div>
-            <div #controlEl contenteditable [formControl]="control"></div>
+            <div
+                #modelEl
+                contenteditable
+                [disabled]="disabled"
+                [(ngModel)]="model"
+            ></div>
+            <div
+                #controlEl
+                contenteditable
+                [formControl]="control"
+            ></div>
             <form [formGroup]="group">
-                <div #nameEl contenteditable formControlName="control"></div>
+                <div
+                    #nameEl
+                    contenteditable
+                    formControlName="control"
+                ></div>
             </form>
         `,
     })
